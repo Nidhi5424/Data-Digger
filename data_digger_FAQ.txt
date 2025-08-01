@@ -116,8 +116,9 @@ DATA DIGGER - SQL QUESTIONS WITH ANSWERS
     FROM OrderDetails
     GROUP BY ProductID;
 
-
-OUTPUT OF ALL QUERY :--
+===============================================================================================================
+	OUTPUT OF ALL QUERY :--
+	~~~~~~~~~~~~~~~~~~~~~~~~
 
 mysql> source D:\\MySQL\\data_digger.sql
 Query OK, 4 rows affected (0.091 sec)
