@@ -115,3 +115,276 @@ DATA DIGGER - SQL QUESTIONS WITH ANSWERS
     SELECT ProductID, COUNT(*) AS TimesSold
     FROM OrderDetails
     GROUP BY ProductID;
+
+
+OUTPUT OF ALL QUERY :--
+
+mysql> source D:\\MySQL\\data_digger.sql
+Query OK, 0 rows affected (0.012 sec)
+
+Query OK, 1 row affected, 1 warning (0.491 sec)
+
+Query OK, 0 rows affected (0.010 sec)
+
+Query OK, 0 rows affected (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.384 sec)
+
+Query OK, 0 rows affected (0.003 sec)
+
+Query OK, 5 rows affected (0.167 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.002 sec)
+
+Query OK, 0 rows affected, 1 warning (0.063 sec)
+
+Query OK, 0 rows affected (0.002 sec)
+
+Query OK, 5 rows affected (0.101 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.003 sec)
+
+Query OK, 0 rows affected, 1 warning (0.067 sec)
+
+Query OK, 0 rows affected (0.004 sec)
+
+Query OK, 4 rows affected (0.060 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.002 sec)
+
+Query OK, 0 rows affected, 1 warning (0.062 sec)
+
+Query OK, 0 rows affected (0.004 sec)
+
+Query OK, 4 rows affected (0.091 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.002 sec)
+
+Query OK, 0 rows affected (0.003 sec)
+
++------------+---------+---------------------+------------+
+| CustomerID | Name    | Email               | Address    |
++------------+---------+---------------------+------------+
+|          1 | Alice   | alice@example.com   | New York   |
+|          2 | Bob     | bob@example.com     | Chicago    |
+|          3 | Charlie | charlie@example.com | Texas      |
+|          4 | David   | david@example.com   | Florida    |
+|          6 | Alice   | alice@example.com   | New York   |
+|          7 | Bob     | bob@example.com     | California |
+|          8 | Charlie | charlie@example.com | Texas      |
+|          9 | David   | david@example.com   | Florida    |
+|         10 | Eve     | eve@example.com     | Nevada     |
+|         11 | Alice   | alice@example.com   | New York   |
+|         12 | Bob     | bob@example.com     | California |
+|         13 | Charlie | charlie@example.com | Texas      |
+|         14 | David   | david@example.com   | Florida    |
+|         15 | Eve     | eve@example.com     | Nevada     |
+|         16 | Alice   | alice@example.com   | New York   |
+|         17 | Bob     | bob@example.com     | California |
+|         18 | Charlie | charlie@example.com | Texas      |
+|         19 | David   | david@example.com   | Florida    |
+|         20 | Eve     | eve@example.com     | Nevada     |
+|         21 | Alice   | alice@example.com   | New York   |
+|         22 | Bob     | bob@example.com     | California |
+|         23 | Charlie | charlie@example.com | Texas      |
+|         24 | David   | david@example.com   | Florida    |
+|         25 | Eve     | eve@example.com     | Nevada     |
++------------+---------+---------------------+------------+
+24 rows in set (0.037 sec)
+
+Query OK, 0 rows affected (0.002 sec)
+
+Query OK, 0 rows affected (0.048 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.001 sec)
+
+Query OK, 0 rows affected (0.008 sec)
+
+Query OK, 0 rows affected (0.001 sec)
+
++------------+-------+-------------------+----------+
+| CustomerID | Name  | Email             | Address  |
++------------+-------+-------------------+----------+
+|          1 | Alice | alice@example.com | New York |
+|          6 | Alice | alice@example.com | New York |
+|         11 | Alice | alice@example.com | New York |
+|         16 | Alice | alice@example.com | New York |
+|         21 | Alice | alice@example.com | New York |
++------------+-------+-------------------+----------+
+5 rows in set (0.011 sec)
+
+Query OK, 0 rows affected (0.002 sec)
+
++---------+------------+------------+-------------+
+| OrderID | CustomerID | OrderDate  | TotalAmount |
++---------+------------+------------+-------------+
+|       1 |          1 | 2025-07-01 |     2000.00 |
+|       5 |          1 | 2025-07-30 |     2500.00 |
+|       6 |          1 | 2025-07-01 |     2000.00 |
+|      10 |          1 | 2025-07-30 |     2500.00 |
+|      11 |          1 | 2025-07-01 |     2000.00 |
+|      15 |          1 | 2025-07-30 |     2500.00 |
+|      16 |          1 | 2025-07-01 |     2000.00 |
+|      20 |          1 | 2025-07-30 |     2500.00 |
+|      21 |          1 | 2025-07-01 |     2000.00 |
+|      25 |          1 | 2025-07-30 |     2500.00 |
++---------+------------+------------+-------------+
+10 rows in set (0.014 sec)
+
+Query OK, 0 rows affected (0.004 sec)
+
+Query OK, 0 rows affected (0.004 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.001 sec)
+
+Query OK, 0 rows affected (0.002 sec)
+
+Query OK, 0 rows affected (0.001 sec)
+
++---------+------------+------------+-------------+
+| OrderID | CustomerID | OrderDate  | TotalAmount |
++---------+------------+------------+-------------+
+|       2 |          2 | 2025-07-15 |     2100.00 |
+|       4 |          4 | 2025-07-25 |     1800.00 |
+|       5 |          1 | 2025-07-30 |     2500.00 |
+|       7 |          2 | 2025-07-15 |     1500.50 |
+|       8 |          3 | 2025-07-20 |     2200.75 |
+|       9 |          4 | 2025-07-25 |     1800.00 |
+|      10 |          1 | 2025-07-30 |     2500.00 |
+|      12 |          2 | 2025-07-15 |     1500.50 |
+|      13 |          3 | 2025-07-20 |     2200.75 |
+|      14 |          4 | 2025-07-25 |     1800.00 |
+|      15 |          1 | 2025-07-30 |     2500.00 |
+|      17 |          2 | 2025-07-15 |     1500.50 |
+|      18 |          3 | 2025-07-20 |     2200.75 |
+|      19 |          4 | 2025-07-25 |     1800.00 |
+|      20 |          1 | 2025-07-30 |     2500.00 |
+|      22 |          2 | 2025-07-15 |     1500.50 |
+|      23 |          3 | 2025-07-20 |     2200.75 |
+|      24 |          4 | 2025-07-25 |     1800.00 |
+|      25 |          1 | 2025-07-30 |     2500.00 |
++---------+------------+------------+-------------+
+19 rows in set (0.021 sec)
+
+Query OK, 0 rows affected (0.002 sec)
+
++---------+---------+-------------+
+| Highest | Lowest  | Average     |
++---------+---------+-------------+
+| 2500.00 | 1500.50 | 2016.875000 |
++---------+---------+-------------+
+1 row in set (0.028 sec)
+
+Query OK, 0 rows affected (0.001 sec)
+
++-----------+-------------+----------+-------+
+| ProductID | ProductName | Price    | Stock |
++-----------+-------------+----------+-------+
+|         1 | Laptop      | 55000.00 |    10 |
+|         6 | Laptop      | 50000.00 |    10 |
+|        11 | Laptop      | 50000.00 |    10 |
+|        16 | Laptop      | 50000.00 |    10 |
+|        20 | Laptop      | 50000.00 |    10 |
+|         4 | Monitor     | 15000.00 |    20 |
+|         9 | Monitor     | 15000.00 |    20 |
+|        14 | Monitor     | 15000.00 |    20 |
+|        19 | Monitor     | 15000.00 |    20 |
+|        23 | Monitor     | 15000.00 |    20 |
+|         3 | Keyboard    |  1200.00 |    80 |
+|         8 | Keyboard    |  1200.00 |    80 |
+|        13 | Keyboard    |  1200.00 |    80 |
+|        18 | Keyboard    |  1200.00 |    80 |
+|        22 | Keyboard    |  1200.00 |    80 |
+|         2 | Mouse       |   700.00 |   100 |
+|         7 | Mouse       |   700.00 |   100 |
+|        12 | Mouse       |   700.00 |   100 |
+|        17 | Mouse       |   700.00 |   100 |
+|        21 | Mouse       |   700.00 |   100 |
++-----------+-------------+----------+-------+
+20 rows in set (0.007 sec)
+
+Query OK, 0 rows affected (0.002 sec)
+
+Query OK, 0 rows affected (0.003 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.001 sec)
+
+Query OK, 0 rows affected (0.002 sec)
+
+Query OK, 0 rows affected (0.001 sec)
+
++-----------+-------------+---------+-------+
+| ProductID | ProductName | Price   | Stock |
++-----------+-------------+---------+-------+
+|         2 | Mouse       |  700.00 |   100 |
+|         3 | Keyboard    | 1200.00 |    80 |
+|         7 | Mouse       |  700.00 |   100 |
+|         8 | Keyboard    | 1200.00 |    80 |
+|        12 | Mouse       |  700.00 |   100 |
+|        13 | Keyboard    | 1200.00 |    80 |
+|        17 | Mouse       |  700.00 |   100 |
+|        18 | Keyboard    | 1200.00 |    80 |
+|        21 | Mouse       |  700.00 |   100 |
+|        22 | Keyboard    | 1200.00 |    80 |
++-----------+-------------+---------+-------+
+10 rows in set (0.006 sec)
+
+Query OK, 0 rows affected (0.002 sec)
+
++----------+----------+
+| MaxPrice | MinPrice |
++----------+----------+
+| 55000.00 |   700.00 |
++----------+----------+
+1 row in set (0.004 sec)
+
+Query OK, 0 rows affected (0.002 sec)
+
++---------------+---------+-----------+----------+----------+
+| OrderDetailID | OrderID | ProductID | Quantity | SubTotal |
++---------------+---------+-----------+----------+----------+
+|            16 |       1 |         1 |        1 | 50000.00 |
+|            17 |       1 |         2 |        2 |  1400.00 |
+|            20 |       1 |         1 |        1 | 50000.00 |
+|            21 |       1 |         2 |        2 |  1400.00 |
++---------------+---------+-----------+----------+----------+
+4 rows in set (0.005 sec)
+
+Query OK, 0 rows affected (0.001 sec)
+
++--------------+
+| TotalRevenue |
++--------------+
+|    135200.00 |
++--------------+
+1 row in set (0.003 sec)
+
+Query OK, 0 rows affected (0.001 sec)
+
++-----------+----------+
+| ProductID | TotalQty |
++-----------+----------+
+|         2 |        4 |
+|         1 |        2 |
+|         3 |        2 |
++-----------+----------+
+3 rows in set (0.012 sec)
+
+Query OK, 0 rows affected (0.002 sec)
+
++-----------+-----------+
+| ProductID | TimesSold |
++-----------+-----------+
+|         1 |         2 |
+|         2 |         2 |
+|         3 |         2 |
+|         4 |         2 |
++-----------+-----------+
+4 rows in set (0.002 sec)
