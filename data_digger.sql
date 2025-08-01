@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS Customers (
     CustomerID INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100),
     Email VARCHAR(100),
-    Address VARCHAR(255));
+    Address VARCHAR(255)
+);
 
 -- Insert sample data into Customers
 INSERT INTO Customers (Name, Email, Address) VALUES
@@ -23,7 +24,8 @@ CREATE TABLE IF NOT EXISTS Orders (
     CustomerID INT,
     OrderDate DATE,
     TotalAmount DECIMAL(10,2),
-    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID));
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
 
 -- Insert sample orders
 INSERT INTO Orders (CustomerID, OrderDate, TotalAmount) VALUES
@@ -38,7 +40,8 @@ CREATE TABLE IF NOT EXISTS Products (
     ProductID INT PRIMARY KEY AUTO_INCREMENT,
     ProductName VARCHAR(100),
     Price DECIMAL(10,2),
-    Stock INT);
+    Stock INT
+);
 
 -- Insert sample products
 INSERT INTO Products (ProductName, Price, Stock) VALUES
@@ -55,73 +58,12 @@ CREATE TABLE IF NOT EXISTS OrderDetails (
     Quantity INT,
     SubTotal DECIMAL(10,2),
     FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
-    FOREIGN KEY (ProductID) REFERENCES Products(ProductID));
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
 
--- Insert valid sample order details (using existing ProductIDs only)
+-- Insert valid sample order details
 INSERT INTO OrderDetails (OrderID, ProductID, Quantity, SubTotal) VALUES
 (1, 1, 1, 50000.00),
 (1, 2, 2, 1400.00),
 (2, 3, 1, 1200.00),
 (4, 4, 1, 15000.00);
-
--- Example Queries
-
--- Retrieve all customers
-SELECT * FROM Customers;
-
--- Update address of CustomerID 2
-UPDATE Customers SET Address = 'Chicago' WHERE CustomerID = 2;
-
--- Delete CustomerID 5
-DELETE FROM Customers WHERE CustomerID = 5;
-
--- Retrieve customers named 'Alice'
-SELECT * FROM Customers WHERE Name = 'Alice';
-
--- Retrieve orders by CustomerID = 1
-SELECT * FROM Orders WHERE CustomerID = 1;
-
--- Update OrderID 2's amount
-UPDATE Orders SET TotalAmount = 2100.00 WHERE OrderID = 2;
-
--- Delete OrderID 3
-DELETE FROM Orders WHERE OrderID = 3;
-
--- Orders from last 30 days
-SELECT * FROM Orders WHERE OrderDate >= CURDATE() - INTERVAL 30 DAY;
-
--- Max, Min, Avg order amount
-SELECT MAX(TotalAmount) AS Highest, MIN(TotalAmount) AS Lowest, AVG(TotalAmount) AS Average FROM Orders;
-
--- Products sorted by price descending
-SELECT * FROM Products ORDER BY Price DESC;
-
--- Update price of ProductID 1
-UPDATE Products SET Price = 55000.00 WHERE ProductID = 1;
-
--- Delete out-of-stock product
-DELETE FROM Products WHERE Stock = 0;
-
--- Products in price range 500 to 2000
-SELECT * FROM Products WHERE Price BETWEEN 500 AND 2000;
-
--- Most and least expensive product
-SELECT MAX(Price) AS MaxPrice, MIN(Price) AS MinPrice FROM Products;
-
--- Retrieve OrderDetails for OrderID 1
-SELECT * FROM OrderDetails WHERE OrderID = 1;
-
--- Total revenue from orders
-SELECT SUM(SubTotal) AS TotalRevenue FROM OrderDetails;
-
--- Top 3 most ordered products
-SELECT ProductID, SUM(Quantity) AS TotalQty
-FROM OrderDetails
-GROUP BY ProductID
-ORDER BY TotalQty DESC
-LIMIT 3;
-
--- Product sales count
-SELECT ProductID, COUNT(*) AS TimesSold
-FROM OrderDetails
-GROUP BY ProductID;
